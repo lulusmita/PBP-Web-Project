@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rating & Komentar Buku</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="ajax.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="display-4">Rating & Komentar Buku</h1>
+        <div id="book-info">
+            <h2 class="h4">Judul Buku: The Book Title</h2>
+            <div id="rating" class="mb-3">
+                <label for="rating-input">Rating (1-5):</label>
+                <input type="number" id="rating-input" class="form-control" min="1" max="5">
+                <button class="btn btn-primary" onclick="submitRating()">Submit Rating</button>
+            </div>
+            <div id="comment" class="mb-3">
+                <label for="comment-input">Komentar:</label>
+                <textarea id="comment-input" class="form-control"></textarea>
+                <button class="btn btn-primary" onclick="submitComment()">Submit Komentar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+    <script>
+        function submitRating() {
+            var rating = $("#rating-input").val();
+            var idbuku = 1; // Ganti dengan ID buku yang sesuai
+            var noktp = 12345; // Ganti dengan nomor KTP anggota yang sesuai
+
+            // Memanggil fungsi submitRating dari ajax.js
+            submitRating(idbuku, noktp, rating, function(response) {
+                // Handle response from the server (e.g., show a success message)
+                alert(response.message);
+            }, function(error) {
+                // Handle error (e.g., show an error message)
+                alert("Terjadi kesalahan: " + error.statusText);
+            });
+        }
+
+        function submitComment() {
+            var komentar = $("#comment-input").val();
+            var idbuku = 1; // Ganti dengan ID buku yang sesuai
+            var noktp = 12345; // Ganti dengan nomor KTP anggota yang sesuai
+
+            // Memanggil fungsi submitComment dari ajax.js
+            submitComment(idbuku, noktp, komentar, function(response) {
+                // Handle response from the server (e.g., show a success message)
+                alert(response.message);
+            }, function(error) {
+                // Handle error (e.g., show an error message)
+                alert("Terjadi kesalahan: " + error.statusText);
+            });
+        }
+    </script>
+</body>
+</html>

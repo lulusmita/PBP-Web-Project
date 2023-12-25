@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Riwayat Transaksi Peminjaman Buku</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Riwayat Transaksi Peminjaman Buku</h1>
+        <div class="form-group">
+            <label for="noktp">Pilih Anggota:</label>
+            <select class="form-control" id="noktp">
+                <option value="noktp_anggota_1">Anggota 1</option>
+                <option value="noktp_anggota_2">Anggota 2</option>
+                <!-- Tambahkan lebih banyak opsi anggota di sini -->
+            </select>
+        </div>
+        <button class="btn btn-primary" id="getTransaksi">Dapatkan Riwayat Transaksi</button>
+        <div id="transaksiResult" class="mt-4"></div>
+    </div>
+    <script src="ajax.js"></script>
+</body>
+</html>
